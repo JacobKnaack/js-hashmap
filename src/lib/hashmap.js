@@ -2,6 +2,13 @@
 
 const LinkedList = require('./linkedlist.js');
 
+/**
+ * Hashmap structure for efficient storage
+ *  { method } : hash - returns an index for a hashed value
+ *  { method } : set - adds an item to the data structure and returns the index for the hashed value
+ *  { method } : get - locates the value for a stored value and returns the value
+ */
+
 class Hashmap {
   constructor(size) {
     this.buckets = new Array(size);
@@ -13,7 +20,7 @@ class Hashmap {
    *  summing the ascii values in the key
    *  multiplying by a prime number
    *  using modulo to find a particular index based on the size of the input
-  **/
+   */
   hash(key) {
     let stringified = typeof (key) === 'string' ? key : key.toString();
     let hashSum = stringified.split('').reduce((total, char) => {
@@ -42,6 +49,27 @@ class Hashmap {
       let current = this.buckets[index].head;
       while (current) {
         if (current.value[key]) {
+          return current.value[key];
+        }
+        current = current.next;
+      }
+    }
+    return null;
+  }
+
+  contains(key) {
+
+    return false;
+  }
+
+  remove(key) {
+    let index = this.hash(key);
+
+    if (this.buckets[index]) {
+      let current = this.buckets[index].head;
+      while (current) {
+        if (current.value[key]) {
+          this.buckets[index].remove(current.value);
           return current.value[key];
         }
         current = current.next;

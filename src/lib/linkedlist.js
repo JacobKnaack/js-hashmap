@@ -21,6 +21,26 @@ class LinkedList {
     current.next = node;
   }
 
+  remove(value) {
+    let result = null;
+    let current = this.head;
+
+    if (current.value === value) {
+      result = current;
+      this.head = current.next;
+      return result.value;
+    }
+
+    while (current) {
+      if (current.next.value === value) {
+        result = current.next;
+        current.next = current.next.next;
+        break;
+      }
+    }
+    return result.value;
+  }
+
   values() {
     let values = [];
     let current = this.head;

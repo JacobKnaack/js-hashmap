@@ -4,7 +4,7 @@
   "description": "Javascript implementation of a hash structure.  A hash structure is one that creates a position within the structure, using a deterministic key.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage",
+    "test": "jest --verbose --coverage && jest-coverage-badges",
     "watch": "jest --watchAll"
   },
   "keywords": [],
@@ -12,6 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "eslint": "^7.4.0",
-    "jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "jest-coverage-badges": "^1.1.2"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
   }
 }
