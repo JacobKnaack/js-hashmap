@@ -1,0 +1,17 @@
+{
+  "name": "js-hashmap",
+  "version": "1.0.0",
+  "description": "Javascript implementation of a hash structure.  A hash structure is one that creates a position within the structure, using a deterministic key.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "watch": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.4.0",
+    "jest": "^26.1.0"
+  }
+}
