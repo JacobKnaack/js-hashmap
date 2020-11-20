@@ -18,3 +18,5 @@ const HashMap = require('hashmap.js');
 // import
 import HashMap from 'hashmap.js';
 ```
+
+- See [test folder](./src/__tests__/hashmap.test.js) for usage of hashMap methods
