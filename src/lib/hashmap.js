@@ -54,10 +54,21 @@ class Hashmap {
         current = current.next;
       }
     }
+
     return null;
   }
 
   contains(key) {
+    let index = this.hash(key);
+
+    if (this.buckets[index]) {
+      let current = this.buckets[index].head;
+      while (current) {
+        if (current.value[key]) {
+          return true;
+        }
+      }
+    }
 
     return false;
   }
@@ -75,6 +86,7 @@ class Hashmap {
         current = current.next;
       }
     }
+
     return null;
   }
 }
